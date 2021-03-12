@@ -1,1 +1,11 @@
 
+Create Virtual Machines.
+Setup Networking
+Setup hostname(Optional)
+Enable ssh on the machines
+Disable swap on the virtual machines.
+Install necessary Packages
+kubeadm, kubectl and kubelet installation
+Install Container Runtime
+Install Control plane
+Worker nodes.
