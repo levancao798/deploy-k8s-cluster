@@ -3,6 +3,13 @@
 ```bash
 cd /tmp
 git clone https://github.com/levancao798/deploy-k8s-cluster.git
+```
+###### set static ip:
+```bash
+cat /tmp/deploy-k8s-cluster/netplan-config.yaml > /etc/netplan/00-installer-config.yaml
+```
+###### install dockerce, kubenetes:
+```bash
 /bin/bash /tmp/deploy-k8s-cluster/node-setup.sh
 ```
 ### on master node:
@@ -12,6 +19,9 @@ kubeadm init --config /etc/kubernetes/kubeadm-master-init.yaml --upload-certs
 ```
 ###### coppy from master to worker:
 ```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl -n kube-public get configmap cluster-info -o jsonpath='{.data.kubeconfig}' > discovery.yaml 
 scp discovery.yaml user@host:/etc/kubernetes
 ```
