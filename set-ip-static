@@ -1,13 +1,12 @@
-cd /etc/netplan/config.yaml
 network:
   version: 2
   ethernets:
     ens160:
       dhcp4: no
       addresses:
-        - 10.68.2.190/24
-      gateway4: 10.68.2.1
+        - x.x.x.x/x
+      gateway4: x.x.x.x
       nameservers:
           addresses: [8.8.8.8, 1.1.1.1]
  
-netplan apply
+
