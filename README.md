@@ -9,6 +9,10 @@ git clone https://github.com/levancao798/deploy-k8s-cluster.git
 cat /tmp/deploy-k8s-cluster/netplan-config.yaml > /etc/netplan/00-installer-config.yaml
 netplan apply
 ```
+###### add ssh pubkey:
+```bash
+cat ~/.ssh/id_rsa.pub |ssh user@ip 'cat >> ~/.ssh/authorized_keys'
+```
 ###### install dockerce, kubenetes:
 ```bash
 /bin/bash /tmp/deploy-k8s-cluster/setup-node.sh
