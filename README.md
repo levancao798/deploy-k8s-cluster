@@ -7,6 +7,7 @@ git clone https://github.com/levancao798/deploy-k8s-cluster.git
 ###### set static ip:
 ```bash
 cat /tmp/deploy-k8s-cluster/netplan-config.yaml > /etc/netplan/00-installer-config.yaml
+netplan apply
 ```
 ###### install dockerce, kubenetes:
 ```bash
