@@ -1,10 +1,12 @@
 ### all node:
-bash /path/nodesetup.sh
-### on master node:
 `bash
+bash /path/nodesetup.sh
+`
+### on master node:
+```bash
 vim /etc/kubernetes/master-init.yaml 
 kubeadm init --config /etc/kubernetes/master-init.yaml --upload-certs
-`
+```
 ###### coppy from master to worker:
 `bash
 kubectl -n kube-public get configmap cluster-info -o jsonpath='{.data.kubeconfig}' > discovery.yaml 
