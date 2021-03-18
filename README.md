@@ -11,7 +11,7 @@ netplan apply
 ```
 ###### install dockerce, kubenetes:
 ```bash
-/bin/bash /tmp/deploy-k8s-cluster/node-setup.sh
+/bin/bash /tmp/deploy-k8s-cluster/setup-node.sh
 ```
 ### on master node:
 ```bash
