@@ -17,7 +17,7 @@ cat ~/.ssh/id_rsa.pub |ssh user@ip 'cat >> ~/.ssh/authorized_keys'
 ```bash
 /bin/bash /tmp/deploy-k8s-cluster/setup-node.sh
 ```
-### on master node:
+### on master node (edit kubeadm-master-init.yaml file):
 ```bash
 mv /tmp/deploy-k8s-cluster/kubeadm-master-init.yaml /etc/kubernetes/kubeadm-master-init.yaml 
 kubeadm init --config /etc/kubernetes/kubeadm-master-init.yaml --upload-certs
@@ -34,7 +34,7 @@ scp discovery.yaml user@host:/etc/kubernetes
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-### on worker:
+### on worker (edit kubeadm-worker-init.yaml file):
 ```bash
 mv /tmp/deploy-k8s-cluster/kubeadm-worker-init.yaml /etc/kubernetes/kubeadm-worker-init.yaml 
 kubeadm join --config /etc/kubernetes/kubeadm-worker-init.yaml
