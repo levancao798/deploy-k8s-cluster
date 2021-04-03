@@ -6,6 +6,7 @@ git clone https://github.com/levancao798/deploy-k8s-cluster.git
 ```
 ###### set static ip:
 ```bash
+vim /tmp/deploy-k8s-cluster/netplan-config.yaml
 cat /tmp/deploy-k8s-cluster/netplan-config.yaml > /etc/netplan/00-installer-config.yaml
 netplan apply
 ```
@@ -19,6 +20,7 @@ cat ~/.ssh/id_rsa.pub |ssh user@ip 'cat >> ~/.ssh/authorized_keys'
 ```
 ### on master node (edit kubeadm-master-init.yaml file):
 ```bash
+vim /tmp/deploy-k8s-cluster/kubeadm-master-init.yaml
 mv /tmp/deploy-k8s-cluster/kubeadm-master-init.yaml /etc/kubernetes/kubeadm-master-init.yaml 
 kubeadm init --config /etc/kubernetes/kubeadm-master-init.yaml --upload-certs
 ```
@@ -36,6 +38,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 ```
 ### on worker (edit kubeadm-worker-init.yaml file):
 ```bash
+vim /tmp/deploy-k8s-cluster/kubeadm-worker-init.yaml
 mv /tmp/deploy-k8s-cluster/kubeadm-worker-init.yaml /etc/kubernetes/kubeadm-worker-init.yaml 
 kubeadm join --config /etc/kubernetes/kubeadm-worker-init.yaml
 ```
