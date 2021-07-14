@@ -42,3 +42,8 @@ vim /tmp/deploy-k8s-cluster/kubeadm-worker-init.yaml
 mv /tmp/deploy-k8s-cluster/kubeadm-worker-init.yaml /etc/kubernetes/kubeadm-worker-init.yaml 
 kubeadm join --config /etc/kubernetes/kubeadm-worker-init.yaml
 ```
+### install k9s on ubuntu
+```bash
+vim $HOME/.bashrc
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+```
