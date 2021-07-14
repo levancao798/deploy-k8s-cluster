@@ -44,6 +44,8 @@ kubeadm join --config /etc/kubernetes/kubeadm-worker-init.yaml
 ```
 ### install k9s on ubuntu
 ```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install k9s
 vim $HOME/.bashrc
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 ```
